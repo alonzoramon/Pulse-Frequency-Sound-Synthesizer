@@ -1,0 +1,1009 @@
+///////////////////////////////////////////////////////////////////
+//Pulse Frequency Modulation Sound Synthesizer w/ 4x4 Touchpad   //
+//Code written by Alonzo Ramon, Ethan Watson, and Gerardo Davila //
+//Microcomputer Systems I / EE 3463                              //
+//Spring 2019                                                    //
+//Instructor: Dr. Morton                                         //
+///////////////////////////////////////////////////////////////////
+
+
+#include <xc.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+// PIC16F1829 Using Timer 0 and interrupts to blink Hello World LED
+// 'C' source line config statements
+
+// CONFIG1
+#pragma config FOSC = INTOSC	// Oscillator Selection (INTOSC oscillator: I/O function on CLKIN pin)
+#pragma config WDTE = OFF   	// Watchdog Timer Enable (WDT disabled)
+#pragma config PWRTE = OFF  	// Power-up Timer Enable (PWRT disabled)
+#pragma config MCLRE = ON   	// MCLR Pin Function Select (MCLR/VPP pin function is MCLR)
+#pragma config CP = OFF     	// Flash Program Memory Code Protection (Program memory code protection is disabled)
+#pragma config CPD = OFF    	// Data Memory Code Protection (Data memory code protection is disabled)
+#pragma config BOREN = OFF  	// Brown-out Reset Enable (Brown-out Reset disabled)
+#pragma config CLKOUTEN = OFF   // Clock Out Enable (CLKOUT function is disabled. I/O or oscillator function on the CLKOUT pin)
+#pragma config IESO = OFF   	// Internal/External Switchover (Internal/External Switchover mode is disabled)
+#pragma config FCMEN = OFF  	// Fail-Safe Clock Monitor Enable (Fail-Safe Clock Monitor is disabled)
+// CONFIG2
+#pragma config WRT = OFF    	// Flash Memory Self-Write Protection (Write protection off)
+#pragma config PLLEN = OFF  	// PLL Enable (4x PLL disabled)
+#pragma config STVREN = ON  	// Stack Overflow/Underflow Reset Enable (Stack Overflow or Underflow will cause a Reset)
+#pragma config BORV = LO    	// Brown-out Reset Voltage Selection (Brown-out Reset Voltage (Vbor), low trip point selected.)
+#pragma config LVP = ON    	// Low-Voltage Programming Enable (High-voltage on MCLR/VPP must be used for programming)
+
+#define _XTAL_FREQ 2300  
+    	char Key (unsigned char);
+    	unsigned char scan();
+	
+    	unsigned char Debug_char;
+    	
+  
+int main(int argc, char** argv) {
+  int j;
+// set up clock speed and pin for GPIO	
+	OSCCON = 0X6A;
+
+	while (1){
+    	
+
+    	Debug_char = scan();
+    	j=0;  //just used to get break point a line
+    	
+    	
+    	
+ 	}   //end of inf while loop
+	return (EXIT_SUCCESS);
+}
+char Key (unsigned char pad){
+	char Letter;
+	
+	switch (pad){
+    	case 0x11: //D
+        	for( int i = 0; i = 10; i ++)
+    	{
+    	TRISB= 0x00;
+    	__delay_ms(353);
+    	RB7 = 1;
+    	__delay_ms(353);
+    	RB7 = 0;
+    	return 0;
+    	}
+        	break;
+    	case 0x12://#
+         	for( int i = 0; i = 10; i ++)
+    	{
+    	TRISB = 0x00;
+    	__delay_ms(377);
+    	RB7 = 1;
+    	__delay_ms(377);
+    	RB7 = 0;
+    	return 0;
+    	break;
+    	}       	
+    	case 0x14://0
+        	for( int i = 0; i = 10; i ++)
+    	{
+    	TRISB = 0x00;
+    	__delay_ms(400);
+    	RB7 = 1;
+    	__delay_ms(400);
+    	RB7 = 0;
+    	return 0;
+    	break;
+    	}
+    	case 0x18://*
+        	for( int i = 0; i = 10; i ++)
+    	{
+    	TRISB = 0x00;
+    	__delay_ms(425);
+    	RB7 = 1;
+    	__delay_ms(425);
+    	RB7 = 0;
+    	return 0;
+    	break;
+    	}
+    	case 0x21://C
+        	for( int i = 0; i = 10; i ++)
+    	{
+    	TRISB = 0x00;
+    	__delay_ms(450);
+    	RB7 = 1;
+    	__delay_ms(450);
+    	RB7 = 0;
+    	
+            	return 0;
+    	break;
+    	}
+    	case 0x22://9
+        	for( int i = 0; i = 10; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(479);
+    	RB7 = 1;
+    	__delay_ms(479);
+    	RB7 = 0;
+        return 0;
+        	}
+    	break;
+    	
+    	case 0x24://8
+       	for( int i = 0; i = 30000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(510);
+    	RB7 = 1;
+    	__delay_ms(510);
+    	RB7 = 0;
+            	return 0;
+        	}
+       	break;
+    	case 0x28://7
+        	for( int i = 0; i = 30000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(540);
+    	RB7 = 1;
+    	__delay_ms(540);
+    	RB7 = 0;
+            	return 0;
+        	}
+        	break;
+    	case 0x41://B
+        	for( int i = 0; i = 30000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(577);
+    	RB7 = 1;
+    	__delay_ms(577);
+    	RB7 = 0;
+            	return 0;
+        	}
+        	break;
+    	case 0x42://6
+        	for( int i = 0; i = 30000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(615);
+    	RB7 = 1;
+    	__delay_ms(615);
+    	RB7 = 0;
+            	return 0;
+        	}
+        	break;
+    	case 0x44://5
+        	for( int i = 0; i = 30000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(653);
+    	RB7 = 1;
+    	__delay_ms(653);
+    	RB7 = 0;
+            	return 0;
+        	}
+        	break;
+    	case 0x48://4
+        	for( int i = 0; i < 10; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(688);
+    	RB7 = 1;
+    	__delay_ms(688);
+    	RB7 = 0;
+            return 0;	
+        	}
+           
+        	break;
+            
+    	case 0x81://A
+        	for( int i = 0; i = 10; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(740);
+    	RB7 = 1;
+    	__delay_ms(740);
+    	RB7 = 0;
+    	return 0;
+        	}
+        	break;
+    	case 0x82://3
+        	for( int i = 0; i = 10; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(268);
+    	RB7 = 1;
+    	__delay_ms(268);
+    	RB7 = 0;
+            	return 0;
+        	}
+        	break;
+    	case 0x84://2
+        	for( int i = 0; i = 10; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(340);
+    	RB7 = 1;
+    	__delay_ms(340);
+    	RB7 = 0;
+            	return 0;
+        	}
+        	break;
+    	case 0x88:{
+        	for( int i = 0; i < 1000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(820);
+    	RB7 = 1;
+    	__delay_ms(820);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(820);
+    	RB7 = 1;
+    	__delay_ms(820);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(540);
+    	RB7 = 1;
+    	__delay_ms(540);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(540);
+    	RB7 = 1;
+    	__delay_ms(540);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(479);
+    	RB7 = 1;
+    	__delay_ms(479);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(479);
+    	RB7 = 1;
+    	__delay_ms(479);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 2000; i ++)//gg
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(540);
+    	RB7 = 1;
+    	__delay_ms(540);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)//ff
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(610);
+    	RB7 = 1;
+    	__delay_ms(610);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(610);
+    	RB7 = 1;
+    	__delay_ms(610);
+    	RB7 = 0;
+            	
+        	}
+             for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+             for( int i = 0; i < 1000; i ++)//ee
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(642);
+    	RB7 = 1;
+    	__delay_ms(642);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)//ee
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(642);
+    	RB7 = 1;
+    	__delay_ms(642);
+    	RB7 = 0;
+            	
+        	}
+             for( int i = 0; i < 1000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(725);
+    	RB7 = 1;
+    	__delay_ms(725);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)//DD
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(725);
+    	RB7 = 1;
+    	__delay_ms(725);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 2000; i ++)//GG
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(820);
+    	RB7 = 1;
+    	__delay_ms(820);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            
+            
+            for( int i = 0; i < 1000; i ++)//ff
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(610);
+    	RB7 = 1;
+    	__delay_ms(610);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(610);
+    	RB7 = 1;
+    	__delay_ms(610);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+             for( int i = 0; i < 1000; i ++)//ee
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(642);
+    	RB7 = 1;
+    	__delay_ms(642);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)//ee
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(642);
+    	RB7 = 1;
+    	__delay_ms(642);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)//DD
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(725);
+    	RB7 = 1;
+    	__delay_ms(725);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)//DD
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(725);
+    	RB7 = 1;
+    	__delay_ms(725);
+    	RB7 = 0;
+            	
+        	}
+             for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 2000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(820);
+    	RB7 = 1;
+    	__delay_ms(820);
+    	RB7 = 0;
+            	
+        	}
+            
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 2000; i ++)//gg
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(540);
+    	RB7 = 1;
+    	__delay_ms(540);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 2000; i ++)//gg
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(540);
+    	RB7 = 1;
+    	__delay_ms(540);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)//ff
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(610);
+    	RB7 = 1;
+    	__delay_ms(610);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(610);
+    	RB7 = 1;
+    	__delay_ms(610);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+             for( int i = 0; i < 1000; i ++)//ee
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(642);
+    	RB7 = 1;
+    	__delay_ms(642);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)//ee
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(642);
+    	RB7 = 1;
+    	__delay_ms(642);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 2000; i ++)//DD
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(725);
+    	RB7 = 1;
+    	__delay_ms(725);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(820);
+    	RB7 = 1;
+    	__delay_ms(820);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(820);
+    	RB7 = 1;
+    	__delay_ms(820);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(540);
+    	RB7 = 1;
+    	__delay_ms(540);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(540);
+    	RB7 = 1;
+    	__delay_ms(540);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(479);
+    	RB7 = 1;
+    	__delay_ms(479);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(479);
+    	RB7 = 1;
+    	__delay_ms(479);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 2000; i ++)//gg
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(540);
+    	RB7 = 1;
+    	__delay_ms(540);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)//ff
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(610);
+    	RB7 = 1;
+    	__delay_ms(610);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(610);
+    	RB7 = 1;
+    	__delay_ms(610);
+    	RB7 = 0;
+            	
+        	}
+             for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+             for( int i = 0; i < 1000; i ++)//ee
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(642);
+    	RB7 = 1;
+    	__delay_ms(642);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)//ee
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(642);
+    	RB7 = 1;
+    	__delay_ms(642);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+             for( int i = 0; i < 1000; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(725);
+    	RB7 = 1;
+    	__delay_ms(725);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 1000; i ++)//DD
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(725);
+    	RB7 = 1;
+    	__delay_ms(725);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 100; i ++)
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(745);
+    	RB7 = 0;
+    	__delay_ms(745);
+    	RB7 = 0;
+            	
+        	}
+            for( int i = 0; i < 2000; i ++)//GG
+        	{
+    	TRISB = 0x00;
+    	__delay_ms(820);
+    	RB7 = 1;
+    	__delay_ms(820);
+    	RB7 = 0;
+            	
+        	}
+            
+            return 0;
+        	break;
+    }
+    	default:
+        	
+        	break;
+	}
+	Letter =0;
+	return (Letter);
+	
+}
+	
+
+unsigned char scan(){
+ 	//Scan the 4x4 key pad
+	// upper 4 bits = rows  lower 4 bits =cols
+	
+	unsigned char rows, cols, chars, result, Test;
+	
+    	ANSELC = 0;
+    	TRISC = 0xF0;   // set rows as inputs
+    	LATC = 0x00;
+    	__delay_us(4);   //short delay ror any capaticince effects
+    	rows = (unsigned)(~PORTC)& 0xF0;   //if not touch should be all zeros
+    	
+    	TRISC = 0x0F;   // set rows as inputs
+    	LATC = 0x00;
+    	__delay_us(4);   //short delay ror any capaticince effects
+    	cols = (unsigned) (~PORTC)& 0x0F;   //if not touch should be all zeros
+    	
+    	result = (unsigned) rows+cols;
+    	
+    	Test = Key(result);  
+    	
+    	return (Test);
+}
